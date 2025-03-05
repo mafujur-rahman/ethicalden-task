@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <nav className="flex items-center justify-between p-5 lg:px-20">
       {/* Logo */}
-      <h1 className="text-3xl font-bold">Liko.</h1>
+      <a href="#" className="text-3xl font-bold cursor-pointer">Liko.</a>
 
       {/* Menu Button for Mobile */}
       <div className="lg:hidden">
