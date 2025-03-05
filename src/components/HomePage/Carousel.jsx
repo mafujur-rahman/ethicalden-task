@@ -1,84 +1,101 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Draggable from "gsap/Draggable";
-import "./Carousel.css"; 
 
-const images = [
-  "https://picsum.photos/id/32/1200/500",
-  "https://picsum.photos/id/33/1200/500",
-  "https://picsum.photos/id/34/1200/500",
-  "https://picsum.photos/id/35/1200/500",
-  "https://picsum.photos/id/36/1200/500",
-  "https://picsum.photos/id/37/1200/500",
-  "https://picsum.photos/id/38/1200/500",
-  "https://picsum.photos/id/39/1200/500",
-  "https://picsum.photos/id/40/1200/500",
-  "https://picsum.photos/id/41/1200/500",
-];
-
-const CurvedCarousel = () => {
-  const ringRef = useRef(null);
-  const draggerRef = useRef(null);
-  let xPos = 0;
+const ImageSlider = () => {
+  const sliderRef = useRef(null);
 
   useEffect(() => {
-    gsap.registerPlugin(Draggable);
+    const slider = sliderRef.current;
+    const images = slider.querySelectorAll("img");
 
-    gsap.timeline()
-      .set(draggerRef.current, { opacity: 0 })
-      .set(ringRef.current, { rotationY: 180 })
-      .set(".img", {
-        rotateY: (i) => i * -36,
-        transformOrigin: "50% 50% 400px",
-        width: "100%",
-        height: "100%",
-        z: -400,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backfaceVisibility: "hidden",
-      })
-      .from(".img", {
-        duration: 1.2,
-        y: 100,
-        opacity: 0,
-        stagger: 0.1,
-        ease: "expo",
-      });
+    // Get the width of the container and the images
+    const imageWidth = images[0].offsetWidth + 20;  
+    const imagesToShow = 4; 
+    const totalWidth = imageWidth * imagesToShow;  
 
-    Draggable.create(draggerRef.current, {
-      onDragStart: (e) => {
-        if (e.touches) e.clientX = e.touches[0].clientX;
-        xPos = Math.round(e.clientX);
-      },
-      onDrag: (e) => {
-        if (e.touches) e.clientX = e.touches[0].clientX;
-        gsap.to(ringRef.current, {
-          rotationY: "-=" + ((Math.round(e.clientX) - xPos) % 360),
-          onUpdate: () => {
-            gsap.set(".img", {
-              backgroundPosition: "center",
-            });
-          },
-        });
-        xPos = Math.round(e.clientX);
-      },
-      onDragEnd: () => {
-        gsap.set(draggerRef.current, { x: 0, y: 0 });
+    // Clone the images to create a continuous loop
+    images.forEach((img) => {
+      const clone = img.cloneNode(true);
+      slider.appendChild(clone);  
+    });
+
+
+    gsap.to(slider, {
+      x: -totalWidth,  
+      duration: 20,  
+      ease: "linear", 
+      repeat: -1,  
+      modifiers: {
+        x: (x) => {
+          
+          if (parseFloat(x) <= -totalWidth) {
+            return "0px"; 
+          }
+          return x; 
+        },
       },
     });
   }, []);
 
   return (
-    <section className="carousel-container">
-      <div id="ring" ref={ringRef}>
-        {images.map((img, i) => (
-          <div key={i} className="img" style={{ backgroundImage: `url(${img})` }}></div>
-        ))}
-      </div>
-      <div id="dragger" ref={draggerRef}></div>
-    </section>
+    <div
+      ref={sliderRef}
+      className="overflow-hidden relative flex"
+      style={{ width: "100%", height: "400px" }} 
+    >
+      {/* images */}
+      <img
+        src="/public/gal-1.webp"
+        alt="Slide 1"
+        className="flex-shrink-0 mr-5"
+        style={{ width: "calc(25% - 20px)" }}  
+      />
+      <img
+        src="/public/gal-2.webp"
+        alt="Slide 2"
+        className="flex-shrink-0 mr-5"
+        style={{ width: "calc(25% - 20px)" }}
+      />
+      <img
+        src="/public/gal-3.webp"
+        alt="Slide 3"
+        className="flex-shrink-0 mr-5"
+        style={{ width: "calc(25% - 20px)" }}
+      />
+      <img
+        src="/public/gal-4.webp"
+        alt="Slide 4"
+        className="flex-shrink-0 mr-5"
+        style={{ width: "calc(25% - 20px)" }}
+      />
+
+      {/* Cloned images (to create continuous effect) */}
+      <img
+        src="/public/gal-1.webp"
+        alt="Slide 1"
+        className="flex-shrink-0 mr-5"
+        style={{ width: "calc(25% - 20px)" }}
+      />
+      <img
+        src="/public/gal-2.webp"
+        alt="Slide 2"
+        className="flex-shrink-0 mr-5"
+        style={{ width: "calc(25% - 20px)" }}
+      />
+      <img
+        src="/public/gal-3.webp"
+        alt="Slide 3"
+        className="flex-shrink-0 mr-5"
+        style={{ width: "calc(25% - 20px)" }}
+      />
+      <img
+        src="/public/gal-4.webp"
+        alt="Slide 4"
+        className="flex-shrink-0 mr-5"
+        style={{ width: "calc(25% - 20px)" }}
+      />
+    </div>
   );
 };
 
-export default CurvedCarousel;
+export default ImageSlider;
