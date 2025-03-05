@@ -7,6 +7,8 @@ import WhatWeDo from './components/HomePage/WhatWeDo'
 import LatestProjects from './components/HomePage/LatestProjects'
 import VideoSection from './components/HomePage/VideoSection'
 import CreativeStudio from './components/HomePage/CreativeStudio'
+import TalkSection from './components/HomePage/TalkSection'
+import Footer from './components/HomePage/Footer'
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
         <LatestProjects />
         <VideoSection />
         <CreativeStudio />
+        <TalkSection />
+        <Footer />
       </div>
     </>
   )
