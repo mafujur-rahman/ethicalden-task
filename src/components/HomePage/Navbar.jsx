@@ -20,7 +20,7 @@ export default function Navbar() {
 
       {/* Navigation Links */}
       <ul
-        className={`absolute top-16 left-0 w-full bg-[#424242] text-white text-2xl rounded-2xl lg:flex lg:relative lg:top-0 lg:w-auto gap-4 items-center lg:px-0 shadow-lg lg:shadow-none transition-all duration-300 ${
+        className={` top-16 left-0 w-full bg-[#424242] text-white text-2xl rounded-2xl fixed lg:flex lg:relative lg:top-0 lg:w-auto gap-4 items-center lg:px-0 shadow-lg lg:shadow-none transition-all duration-300 ${
           isOpen ? "block" : "hidden"
         } lg:flex`}
       >
