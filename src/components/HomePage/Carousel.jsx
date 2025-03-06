@@ -6,94 +6,34 @@ const ImageSlider = () => {
 
   useEffect(() => {
     const slider = sliderRef.current;
-    const images = slider.querySelectorAll("img");
+    const images = Array.from(slider.children);
 
-    // Get the width of the container and the images
-    const imageWidth = images[0].offsetWidth + 20;  
-    const imagesToShow = 4; 
-    const totalWidth = imageWidth * imagesToShow;  
+    if (images.length === 0) return;
 
-    // Clone the images to create a continuous loop
+    // Duplicate images dynamically to create an infinite loop
     images.forEach((img) => {
       const clone = img.cloneNode(true);
-      slider.appendChild(clone);  
+      slider.appendChild(clone);
     });
-
 
     gsap.to(slider, {
-      x: -totalWidth,  
-      duration: 20,  
-      ease: "linear", 
-      repeat: -1,  
-      modifiers: {
-        x: (x) => {
-          
-          if (parseFloat(x) <= -totalWidth) {
-            return "0px"; 
-          }
-          return x; 
-        },
-      },
+      x: "-50%", 
+      duration: 50, 
+      ease: "linear",
+      repeat: -1,
     });
+
   }, []);
 
   return (
-    <div
-      ref={sliderRef}
-      className="overflow-hidden relative flex"
-      style={{ width: "100%", height: "400px" }} 
-    >
-      {/* images */}
-      <img
-        src="/gal-1.webp"
-        alt="Slide 1"
-        className="flex-shrink-0 mr-5"
-        style={{ width: "calc(25% - 20px)" }}  
-      />
-      <img
-        src="/gal-2.webp"
-        alt="Slide 2"
-        className="flex-shrink-0 mr-5"
-        style={{ width: "calc(25% - 20px)" }}
-      />
-      <img
-        src="/gal-3.webp"
-        alt="Slide 3"
-        className="flex-shrink-0 mr-5"
-        style={{ width: "calc(25% - 20px)" }}
-      />
-      <img
-        src="/gal-4.webp"
-        alt="Slide 4"
-        className="flex-shrink-0 mr-5"
-        style={{ width: "calc(25% - 20px)" }}
-      />
-
-      {/* Cloned images (to create continuous effect) */}
-      <img
-        src="/gal-1.webp"
-        alt="Slide 1"
-        className="flex-shrink-0 mr-5"
-        style={{ width: "calc(25% - 20px)" }}
-      />
-      <img
-        src="/gal-2.webp"
-        alt="Slide 2"
-        className="flex-shrink-0 mr-5"
-        style={{ width: "calc(25% - 20px)" }}
-      />
-      <img
-        src="/gal-3.webp"
-        alt="Slide 3"
-        className="flex-shrink-0 mr-5"
-        style={{ width: "calc(25% - 20px)" }}
-      />
-      <img
-        src="/gal-4.webp"
-        alt="Slide 4"
-        className="flex-shrink-0 mr-5"
-        style={{ width: "calc(25% - 20px)" }}
-      />
+    <div className="overflow-hidden w-full h-80 relative  min-h-screen  ">
+      <div ref={sliderRef} className="flex w-max border-gray-300  border-dashed border-y-2">
+        {/* Images */}
+        <img src="/gal-1.webp" alt="Slide 1" className="w-1/4 h-auto mx-2" />
+        <img src="/gal-2.webp" alt="Slide 2" className="w-1/4 h-auto mx-2" />
+        <img src="/gal-3.webp" alt="Slide 3" className="w-1/4 h-auto mx-2" />
+        <img src="/gal-4.webp" alt="Slide 4" className="w-1/4 h-auto mx-2" />
+      </div>
     </div>
   );
 };
