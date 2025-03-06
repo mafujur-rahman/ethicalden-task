@@ -76,11 +76,11 @@ const CreativeProjects4 = () => {
           className="absolute text-center text-white z-0 px-6 py-4 rounded-lg"
         >
           <h2 className="text-xl mb-16">SEP 2024 - CREATIVE</h2>
-          <p className="text-6xl font-bold mb-10">Fashion <br /> sentence</p>
+          <p className="text-6xl font-bold mb-10">Travel <br /> explore</p>
           <button className="hover:bg-white border border-gray-400 hover:text-black py-2 px-6 rounded-2xl  transition duration-300">
             SEE PROJECT
           </button>
-          <p className="mt-16 h-2 border-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl"></p>
+          <p className="mt-16 h-2 border-0 bg-gradient-to-r from-red-500 to-red-700 rounded-2xl"></p>
 
 
         </div>

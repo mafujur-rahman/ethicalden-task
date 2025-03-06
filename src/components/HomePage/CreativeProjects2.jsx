@@ -80,7 +80,7 @@ const CreativeProjects2 = () => {
           <button className="hover:bg-white border border-gray-400 hover:text-black py-2 px-6 rounded-2xl  transition duration-300">
             SEE PROJECT
           </button>
-          <p className="mt-16 h-2 border-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl"></p>
+          <p className="mt-16 h-2 border-0 bg-gradient-to-r from-red-500 to-red-700 rounded-2xl"></p>
 
 
         </div>

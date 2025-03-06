@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-import { FiMenu, FiX } from "react-icons/fi"; // Import menu icons
+import { FiMenu, FiX } from "react-icons/fi"; 
 import { MdOutlineShoppingBag } from "react-icons/md";
 
 export default function Navbar() {
@@ -9,8 +9,8 @@ export default function Navbar() {
   return (
     <nav className="flex items-center justify-between p-5 lg:px-20">
       <img
-        className="w-40 h-auto cursor-pointer"
-        src="/fowzi media 2.png"
+        className="w-16 h-auto cursor-pointer"
+        src="/icon 2.png"
         alt="Fowzi Media Logo"
       />
 
@@ -23,10 +23,12 @@ export default function Navbar() {
 
       {/* Navigation Links */}
       <ul
-        className={` top-16 left-0 w-full bg-[#424242] text-white text-2xl rounded-2xl fixed lg:flex lg:relative lg:top-0 lg:w-auto gap-4 items-center lg:px-0 shadow-lg lg:shadow-none transition-all duration-300 ${isOpen ? "block" : "hidden"
+        className={` top-16 left-0 px-4 w-full bg-[#424242] text-white text-2xl rounded-2xl fixed lg:flex lg:relative lg:top-0 lg:w-auto gap-4 items-center lg:px-0 shadow-lg lg:shadow-none transition-all duration-300 ${isOpen ? "block" : "hidden"
           } lg:flex`}
+        
+          style={{ fontFamily: 'Glacial Indifference' }}
       >
-        {["Home", "Pages", "Portfolio", "Blog", "Contact", <MdOutlineShoppingBag />].map((item) => (
+        {["HOME", "SERVICES", "ABOUT", "PORTFOLIO", "CASE STUDIES", "CONTACT"].map((item) => (
           <li key={item} className="text-lg p-3 cursor-pointer">
             {item}
           </li>

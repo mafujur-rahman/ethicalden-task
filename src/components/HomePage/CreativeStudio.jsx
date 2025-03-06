@@ -48,7 +48,7 @@ const CreativeStudio = () => {
         <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
                 {/* Main Heading */}
-                <p className="text-xl ml-8 mb-8 text-gray-900" style={{ fontFamily: 'Glacial Indifference' }}>(  Our Approach  )</p>
+                <p className="text-xl text-[#FF0101] mb-8" style={{ fontFamily: 'Glacial Indifference' }}>(  Our Approach  )</p>
                 <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 flex gap-5 items-center" style={{ fontFamily: 'Glacial Indifference' }}>
                     <span className="animate-text" style={{ fontFamily: 'Glacial Indifference' }}>Creative</span>
                     <img
@@ -60,7 +60,7 @@ const CreativeStudio = () => {
                 </h1>
 
                 <h1 className='text-4xl sm:text-5xl font-bold text-gray-900 mb-12'>
-                    <span className="animate-text" style={{ fontFamily: 'Glacial Indifference' }}>development studio</span>
+                    <span className="animate-text" style={{ fontFamily: 'Glacial Indifference' }}> <span className='text-[#FF0101]'>development</span> studio</span>
                 </h1>
 
                 {/* Divider */}

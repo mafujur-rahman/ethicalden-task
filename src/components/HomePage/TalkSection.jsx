@@ -12,11 +12,11 @@ const TalkSection = () => {
       yoyo: true,
       duration: 0.6,
       ease: "ease.inOut",
-      stagger: 0.3,  // This stagger will create a wave effect between the two texts
+      stagger: 0.3,  
     });
 
     // Gradient purple color change every 3 seconds for both texts
-    const purpleGradientColors = ["#8e2de2", "#4a00e0"];  // Purple shades
+    const purpleGradientColors = ["#FFFF", "#FF0101"];  
     let index = 0;
     setInterval(() => {
       gsap.to(".gradient-text", {
@@ -41,7 +41,7 @@ const TalkSection = () => {
           <img
             className="rotate-image"
             style={{ width: "30px", height: "30px" }}
-            src="/icon 2.png"
+            src="/icon 1.png"
             alt=""
           />
         </h1>
@@ -52,12 +52,12 @@ const TalkSection = () => {
               className="relative bg-[#FF0101] text-white p-6 sm:p-8 text-xl sm:text-2xl rounded-2xl flex flex-col items-center justify-center gap-2 border border-[#1E1E1E] shadow-lg transform rotate-45"
               style={{
                 fontFamily: "Glacial Indifference",
-                width: "120px", // Adjust width
-                height: "120px", // Adjust height
+                width: "120px", 
+                height: "120px", 
               }}
             >
               <div className="transform -rotate-45 flex flex-col items-center">
-                Get <br /> in Touch <br />
+                Get in <br /> Touch <br />
                 <TiArrowRightThick className="text-3xl" />
               </div>
             </button>

@@ -2,14 +2,17 @@ import React, { useEffect, useRef } from "react";
 import { TiArrowRightThick } from "react-icons/ti";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import "./brandsSlider.css";
 import "./rotateImage.css";
+import "./WhatWeDo.css"
 
 gsap.registerPlugin(ScrollTrigger);
 
 const WhatWeDo = () => {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
+  const sliderRef = useRef(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -43,10 +46,20 @@ const WhatWeDo = () => {
     );
   }, []);
 
+  // 🔄 Infinite Scrolling Animation
+  useGSAP(() => {
+    gsap.to(sliderRef.current, {
+      x: "-50%",
+      duration: 10,
+      repeat: -1,
+      ease: "linear",
+    });
+  });
+
   return (
     <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <h2 ref={titleRef} className="text-2xl font-bold text-gray-700 mb-8 ml-5" style={{ fontFamily: 'Glacial Indifference' }}>
+        <h2 className="text-2xl font-bold  mb-8 text-[#FF0101]" style={{ fontFamily: 'Glacial Indifference' }}>
           ( WHAT WE DO )
         </h2>
         <p ref={subtitleRef} className="text-6xl text-gray-700 font-bold mb-8" style={{ fontFamily: 'Glacial Indifference' }}>
@@ -75,33 +88,23 @@ const WhatWeDo = () => {
           </div>
         </div>
 
-        {/* brands img */}
-        <div className="slider-container mt-10">
-          {/* Image slider */}
+        {/* INFINITE SCROLLING SLIDER */}
+        <div className="slider-container mt-14">
           <div className="image-slider">
-            <img src="/brand-1.webp" alt="brand-1" />
-            <img src="/brand-2.webp" alt="brand-2" />
-            <img src="/brand-3.webp" alt="brand-3" />
-            <img src="/brand-4.webp" alt="brand-4" />
-            <img src="/brand-5.webp" alt="brand-5" />
-            <img src="/brand-6.webp" alt="brand-6" />
-            <img src="/brand-7.webp" alt="brand-7" />
-            <img src="/brand-1.webp" alt="brand-1" />
-            <img src="/brand-2.webp" alt="brand-2" />
-            <img src="/brand-3.webp" alt="brand-3" />
-            <img src="/brand-4.webp" alt="brand-4" />
-            <img src="/brand-5.webp" alt="brand-5" />
-            <img src="/brand-6.webp" alt="brand-6" />
-            <img src="/brand-7.webp" alt="brand-7" />
-            <img src="/brand-1.webp" alt="brand-1" />
-            <img src="/brand-2.webp" alt="brand-2" />
-            <img src="/brand-3.webp" alt="brand-3" />
-            <img src="/brand-4.webp" alt="brand-4" />
-            <img src="/brand-5.webp" alt="brand-5" />
-            <img src="/brand-6.webp" alt="brand-6" />
-            <img src="/brand-7.webp" alt="brand-7" />
+            {/* Duplicate images to create a seamless effect */}
+            {[...Array(2)].map((_, i) => (
+              <React.Fragment key={i}>
+                <img src="/tONe.png" alt="brand-1" />
+                <img src="/tChair.png" alt="brand-2" />
+                <img src="/tRisingImpact.png" alt="brand-3" />
+                <img src="/trustedLogoFour.png" alt="brand-4" />
+                <img src="/trustedLogoThree.png" alt="brand-5" />
+                <img src="/trustedLogoSeven.png" alt="brand-6" />
+              </React.Fragment>
+            ))}
           </div>
         </div>
+
       </div>
     </div>
   );

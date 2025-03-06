@@ -46,7 +46,7 @@ const LatestProjects = () => {
             <div className='grid justify-center pt-16'>
                 <div className='text-white flex gap-5 items-center'>
                     {/* "Latest" with wave effect */}
-                    <h1 ref={latestRef} className='text-9xl flex' style={{ fontFamily: 'Glacial Indifference' }}>
+                    <h1 ref={latestRef} className='text-9xl flex ' style={{ fontFamily: 'Glacial Indifference' }}>
                         {"Latest".split("").map((letter, i) => (
                             <span key={i} className="inline-block">{letter}</span>
                         ))}
@@ -58,13 +58,13 @@ const LatestProjects = () => {
                         style={{ transform: "rotate(45deg)" }}
                     >
                         <div style={{ transform: "rotate(-45deg)" }} className="flex flex-col items-center">
-                            See <br /> All Projects <br /> <TiArrowRightThick />
+                            See All <br /> Projects <br /> <TiArrowRightThick />
                         </div>
                     </button>
                 </div>
 
                 {/* "Projects" with wave effect */}
-                <h1 ref={projectsRef} className='text-white text-9xl ml-16 flex' style={{ fontFamily: 'Glacial Indifference' }}>
+                <h1 ref={projectsRef} className=' text-9xl ml-16 flex text-[#FF0101]' style={{ fontFamily: 'Glacial Indifference' }}>
                     {"Projects".split("").map((letter, i) => (
                         <span key={i} className="inline-block">{letter}</span>
                     ))}
