@@ -42,23 +42,25 @@ const CreativeStudio = () => {
         );
     }, []);
 
+
+
     return (
         <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
                 {/* Main Heading */}
-                <p className="text-xl ml-8 mb-8 text-gray-900">(  Our Approach  )</p>
-                <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 flex gap-5 items-center">
-                    <span className="animate-text">Creative</span>
+                <p className="text-xl ml-8 mb-8 text-gray-900" style={{ fontFamily: 'Glacial Indifference' }}>(  Our Approach  )</p>
+                <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 flex gap-5 items-center" style={{ fontFamily: 'Glacial Indifference' }}>
+                    <span className="animate-text" style={{ fontFamily: 'Glacial Indifference' }}>Creative</span>
                     <img
                         className='rotate-image'
                         style={{ width: "30px", height: "30px" }}
-                        src="/ab-shape-img.webp"
+                        src="/icon 2.png"
                         alt=""
                     />
                 </h1>
 
                 <h1 className='text-4xl sm:text-5xl font-bold text-gray-900 mb-12'>
-                    <span className="animate-text">development studio</span>
+                    <span className="animate-text" style={{ fontFamily: 'Glacial Indifference' }}>development studio</span>
                 </h1>
 
                 {/* Divider */}
@@ -66,15 +68,15 @@ const CreativeStudio = () => {
 
                 {/* Product Design Section */}
                 <div className="mb-12 flex flex-col sm:flex-row justify-between sm:space-x-8">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Product design</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Glacial Indifference' }}>Product design</h2>
                     <div className="flex flex-col sm:flex-row sm:space-x-4">
                         <div>
-                            <p className="text-lg text-gray-600 mb-6 sm:mb-0">
+                            <p className="text-lg text-gray-600 mb-6 sm:mb-0" style={{ fontFamily: 'Glacial Indifference' }}>
                                 Once we have an idea of your needs, a research and design process <br />
                                 begins to gain deep knowledge about the business, users <br />
                                 and world content.
                             </p>
-                            <div className="flex flex-wrap gap-4 sm:gap-8 mt-5">
+                            <div className="flex flex-wrap gap-4 sm:gap-8 mt-5" style={{ fontFamily: 'Glacial Indifference' }}>
                                 <span className="text-sm font-medium border border-gray-300 rounded-3xl p-3 cursor-pointer text-gray-500">RESEARCH</span>
                                 <span className="text-sm font-medium border border-gray-300 rounded-3xl p-3 cursor-pointer text-gray-500">U/LUX</span>
                                 <span className="text-sm font-medium border border-gray-300 rounded-3xl p-3 cursor-pointer text-gray-500">PROTOTYPING</span>
@@ -82,7 +84,14 @@ const CreativeStudio = () => {
                         </div>
 
                     </div>
-                    <button className='mt-6 sm:mt-0 border border-gray-300 rounded-full p-3'>See <br /> details <br /> <TiArrowRightThick /></button>
+                    <button
+                       
+                        className="mt-6 sm:mt-0 border border-gray-300 rounded-full p-4 text-center text-lg flex flex-col items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
+                        style={{ fontFamily: "Glacial Indifference" }}
+                    >
+                        See <br /> Details <br />
+                        <TiArrowRightThick className="text-2xl mt-1" />
+                    </button>
                 </div>
 
                 {/* Divider */}
@@ -90,15 +99,15 @@ const CreativeStudio = () => {
 
                 {/* Web/Mobile Section */}
                 <div className="mb-12 flex flex-col sm:flex-row justify-between sm:space-x-8">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Web/Mobile</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Glacial Indifference' }}>Web/Mobile</h2>
                     <div className="flex flex-col sm:flex-row sm:space-x-4">
                         <div>
-                            <p className="text-lg text-gray-600 mb-6 sm:mb-0">
+                            <p className="text-lg text-gray-600 mb-6 sm:mb-0" style={{ fontFamily: 'Glacial Indifference' }}>
                                 Once we have an idea of your needs, a research and design process <br />
                                 begins to gain deep knowledge about the business, users <br />
                                 and world content.
                             </p>
-                            <div className="flex flex-wrap gap-4 sm:gap-8 mt-5">
+                            <div className="flex flex-wrap gap-4 sm:gap-8 mt-5" style={{ fontFamily: 'Glacial Indifference' }}>
                                 <span className="text-sm font-medium border border-gray-300 rounded-3xl p-3 cursor-pointer text-gray-500">SED</span>
                                 <span className="text-sm font-medium border border-gray-300 rounded-3xl p-3 cursor-pointer text-gray-500">CREATIVE DEVELOPMENT</span>
                                 <span className="text-sm font-medium border border-gray-300 rounded-3xl p-3 cursor-pointer text-gray-500">WIDEL</span>
@@ -106,7 +115,14 @@ const CreativeStudio = () => {
                         </div>
 
                     </div>
-                    <button className='mt-6 sm:mt-0 border border-gray-300 rounded-full p-3'>See <br /> details <br /> <TiArrowRightThick /></button>
+                    <button
+                        
+                        className="mt-6 sm:mt-0 border border-gray-300 rounded-full p-4 text-center text-lg  flex flex-col items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
+                        style={{ fontFamily: "Glacial Indifference" }}
+                    >
+                        See <br /> Details <br />
+                        <TiArrowRightThick className="text-2xl mt-1" />
+                    </button>
                 </div>
 
                 {/* Divider */}
@@ -114,15 +130,15 @@ const CreativeStudio = () => {
 
                 {/* Consulting Section */}
                 <div className='flex flex-col sm:flex-row justify-between sm:space-x-8'>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Consulting</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Glacial Indifference' }}>Consulting</h2>
                     <div className="flex flex-col sm:flex-row sm:space-x-4">
                         <div>
-                            <p className="text-lg text-gray-600 mb-6 sm:mb-0">
+                            <p className="text-lg text-gray-600 mb-6 sm:mb-0" style={{ fontFamily: 'Glacial Indifference' }}>
                                 Once we have an idea of your needs, a research and design process <br />
                                 begins to gain deep knowledge about the business, users <br />
                                 and world content.
                             </p>
-                            <div className="flex flex-wrap gap-4 sm:gap-8 mt-5">
+                            <div className="flex flex-wrap gap-4 sm:gap-8 mt-5" style={{ fontFamily: 'Glacial Indifference' }}>
                                 <span className="text-sm font-medium border border-gray-300 rounded-3xl p-3 cursor-pointer text-gray-500">CREATIVE</span>
                                 <span className="text-sm font-medium border border-gray-300 rounded-3xl p-3 cursor-pointer text-gray-500">DIGITAL STRATEGY</span>
                                 <span className="text-sm font-medium border border-gray-300 rounded-3xl p-3 cursor-pointer text-gray-500">MVP</span>
@@ -130,7 +146,13 @@ const CreativeStudio = () => {
                         </div>
 
                     </div>
-                    <button className='mt-6 sm:mt-0 border border-gray-300 rounded-full p-3'>See <br /> details <br /> <TiArrowRightThick /></button>
+                    <button
+                        className="mt-6 sm:mt-0 border border-gray-300 rounded-full p-4 text-center text-lg  flex flex-col items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
+                        style={{ fontFamily: "Glacial Indifference" }}
+                    >
+                        See <br /> Details <br />
+                        <TiArrowRightThick className="text-2xl mt-1" />
+                    </button>
                 </div>
 
                 {/* Divider */}

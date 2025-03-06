@@ -27,30 +27,49 @@ const TalkSection = () => {
     }, 3000);
   }, []);
 
+ 
+
+
+
+
   return (
     <div className="bg-[#1E1E1E] text-white py-16 px-8 text-center w-full">
       <div className="max-w-6xl mx-auto">
         {/* Main heading with wave bouncing animation */}
-        <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-white mb-4 flex gap-5 items-center wave-bounce gradient-text">
+        <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-white mb-4 flex gap-5 items-center wave-bounce gradient-text" style={{ fontFamily: 'Glacial Indifference' }}>
           Let's Talk
           <img
             className="rotate-image"
-            style={{ width: "30px", height: "30px", filter: "brightness(0) invert(1)" }}
-            src="/ab-shape-img.webp"
+            style={{ width: "30px", height: "30px" }}
+            src="/icon 2.png"
             alt=""
           />
         </h1>
 
         <div className="flex flex-col sm:flex-row pt-5 gap-8 sm:gap-12 text-start">
-          <button className="bg-white text-black p-6 sm:p-8 rounded-full text-xl sm:text-2xl flex items-center gap-2">
-            Get <br /> in Touch <br /> <TiArrowRightThick />
-          </button>
+          <div className="relative flex items-center justify-center">
+            <button
+              className="relative bg-[#FF0101] text-white p-6 sm:p-8 text-xl sm:text-2xl rounded-2xl flex flex-col items-center justify-center gap-2 border border-[#1E1E1E] shadow-lg transform rotate-45"
+              style={{
+                fontFamily: "Glacial Indifference",
+                width: "120px", // Adjust width
+                height: "120px", // Adjust height
+              }}
+            >
+              <div className="transform -rotate-45 flex flex-col items-center">
+                Get <br /> in Touch <br />
+                <TiArrowRightThick className="text-3xl" />
+              </div>
+            </button>
+          </div>
+
+
           <div className="flex-1">
             {/* Text with gradient animation and wave bounce */}
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-white mb-4 wave-bounce gradient-text">
+            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-white mb-4 wave-bounce gradient-text" style={{ fontFamily: 'Glacial Indifference' }}>
               about it
             </h1>
-            <p className="mt-4 text-lg sm:text-xl">
+            <p className="mt-4 text-lg sm:text-xl" style={{ fontFamily: 'Glacial Indifference' }}>
               We will collaborate to find the right answer and bring progress <br />
               to your business and to the world.
             </p>

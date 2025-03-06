@@ -3,10 +3,10 @@ import { TiArrowRightThick } from "react-icons/ti";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#121212] text-white py-10">
+    <footer className="bg-[#121212] text-white py-10" style={{ fontFamily: 'Glacial Indifference' }}>
       <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-start">
         {/* Website Map */}
-        <div className="mb-8 lg:mb-0 lg:w-1/3">
+        <div className="mb-8 lg:mb-0 lg:w-1/3" >
           <h3 className="text-lg font-bold mb-2">Website map</h3>
           <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 text-gray-300">
             <li><a href="#home" className="hover:underline">Home</a></li>
@@ -15,7 +15,7 @@ const Footer = () => {
             <li><a href="#blog" className="hover:underline">Blog</a></li>
             <li><a href="#contact" className="hover:underline">Contact</a></li>
           </ul>
-          
+
           {/* Newsletter Section */}
           <div className="mt-10">
             <h3 className="text-lg font-bold mb-2">Newsletter</h3>
@@ -33,18 +33,22 @@ const Footer = () => {
         </div>
 
         {/* Center Text */}
-        <div className="flex-grow text-center mb-8 lg:mb-0 lg:w-1/3">
+        <div className="flex-grow text-center flex flex-col items-center mb-8 lg:mb-0 lg:w-1/3">
           <p className="mb-4">Drop us a line sed id semper risus in hendrerit.</p>
-          <h1 className="text-3xl font-bold py-16">Liko.</h1>
+
+          {/* Centered Image */}
+          <img className="w-32 h-auto py-16 mx-auto" src="/fowzi media.png" alt="Fowzi Media Logo" />
+
           <p>&copy; 2025 Themepure. <br /> All rights reserved</p>
         </div>
+
 
         {/* Contact Information */}
         <div className="mb-8 lg:mb-0 lg:w-1/3">
           <h3 className="text-lg font-bold mb-2">Contact</h3>
           <p className="mb-2">740 NEW SOUTH HEAD RD, DOUBLE BAY  SYD, NEW YORK</p>
           <p className="mb-2">P: +725 214 456</p>
-          <p>E: contact@liko.com</p>
+          <p>E: contact@fawzimedia.com</p>
 
           <div className="mt-10">
             <h3 className="text-lg font-bold mb-2">Follow</h3>

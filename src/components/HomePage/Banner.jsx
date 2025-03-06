@@ -1,5 +1,5 @@
 import { TiArrowRightThick } from "react-icons/ti";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,9 +9,11 @@ export default function HeroSection() {
     const textRef = useRef(null);
     const subTextRef = useRef(null);
     const sectionRef = useRef(null);
+    const circleRef = useRef(null);
+    let hoverAnimation = useRef(null);
 
-    useEffect(() => {
-        // Wave animation for heading
+    useLayoutEffect(() => {
+        // Animate heading text
         gsap.fromTo(
             textRef.current.children,
             { y: 30, opacity: 0 },
@@ -20,7 +22,7 @@ export default function HeroSection() {
                 opacity: 1,
                 stagger: 0.05,
                 duration: 1.5,
-                ease: "power3.out"
+                ease: "power3.out",
             }
         );
 
@@ -33,11 +35,11 @@ export default function HeroSection() {
                 y: 0,
                 delay: 0.5,
                 duration: 1.2,
-                ease: "power3.out"
+                ease: "power3.out",
             }
         );
 
-        // Scroll animation for the entire section
+        // Scroll animation for section
         gsap.fromTo(
             sectionRef.current,
             { opacity: 0, y: 50 },
@@ -49,10 +51,23 @@ export default function HeroSection() {
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     start: "top 80%",
-                    toggleActions: "play none none reverse"
-                }
+                    toggleActions: "play none none reverse",
+                },
             }
         );
+    }, []);
+
+    useLayoutEffect(() => {
+        if (!circleRef.current) return;
+
+        hoverAnimation.current = gsap.to(circleRef.current, {
+            backgroundColor: "#FF0101",
+            color: "#fff",
+            scale: 1.1,
+            duration: 0.3,
+            ease: "power2.inOut",
+            paused: true,
+        });
     }, []);
 
     return (
@@ -71,15 +86,22 @@ export default function HeroSection() {
             </p>
 
             {/* Button */}
-            <div className="mt-8 text-center">
-                <button style={{ fontFamily: 'Glacial Indifference' }} className="px-8 py-3 bg-black text-white rounded-full text-lg shadow-lg transition-all flex items-center justify-center hover:bg-[#FF0101] duration-300">
+            <div className="mt-8 text-center ">
+                <button
+                    style={{ fontFamily: "Glacial Indifference" }}
+                    className="px-8 py-3 bg-black text-white  rounded-full text-lg shadow-lg transition-all flex items-center justify-center"
+                >
                     Say Hello
-                    <span className="bg-white p-2 ml-2 rounded-full border-opacity-50 text-black transition-all duration-300 ease-in-out hover:bg-[#FF0101] hover:text-white">
+                    <span
+                        ref={circleRef}
+                        className="bg-white p-2 ml-2 rounded-full hover:bg-red-600 text-black transition-all duration-300 ease-in-out"
+                        onMouseEnter={() => hoverAnimation.current.play()}
+                        onMouseLeave={() => hoverAnimation.current.reverse()}
+                    >
                         <TiArrowRightThick />
                     </span>
                 </button>
             </div>
-
         </section>
     );
 }
