@@ -45,25 +45,25 @@ const ImageSlider = () => {
     >
       {/* images */}
       <img
-        src="/public/gal-1.webp"
+        src="/gal-1.webp"
         alt="Slide 1"
         className="flex-shrink-0 mr-5"
         style={{ width: "calc(25% - 20px)" }}  
       />
       <img
-        src="/public/gal-2.webp"
+        src="/gal-2.webp"
         alt="Slide 2"
         className="flex-shrink-0 mr-5"
         style={{ width: "calc(25% - 20px)" }}
       />
       <img
-        src="/public/gal-3.webp"
+        src="/gal-3.webp"
         alt="Slide 3"
         className="flex-shrink-0 mr-5"
         style={{ width: "calc(25% - 20px)" }}
       />
       <img
-        src="/public/gal-4.webp"
+        src="/gal-4.webp"
         alt="Slide 4"
         className="flex-shrink-0 mr-5"
         style={{ width: "calc(25% - 20px)" }}
@@ -71,25 +71,25 @@ const ImageSlider = () => {
 
       {/* Cloned images (to create continuous effect) */}
       <img
-        src="/public/gal-1.webp"
+        src="/gal-1.webp"
         alt="Slide 1"
         className="flex-shrink-0 mr-5"
         style={{ width: "calc(25% - 20px)" }}
       />
       <img
-        src="/public/gal-2.webp"
+        src="/gal-2.webp"
         alt="Slide 2"
         className="flex-shrink-0 mr-5"
         style={{ width: "calc(25% - 20px)" }}
       />
       <img
-        src="/public/gal-3.webp"
+        src="/gal-3.webp"
         alt="Slide 3"
         className="flex-shrink-0 mr-5"
         style={{ width: "calc(25% - 20px)" }}
       />
       <img
-        src="/public/gal-4.webp"
+        src="/gal-4.webp"
         alt="Slide 4"
         className="flex-shrink-0 mr-5"
         style={{ width: "calc(25% - 20px)" }}

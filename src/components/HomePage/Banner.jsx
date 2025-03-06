@@ -61,24 +61,25 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 via-green-300 to-red-300 blur-3xl opacity-20"></div>
 
             {/* Hero Content */}
-            <h2 ref={textRef} className="text-6xl lg:text-8xl font-bold">
+            <h2 ref={textRef} className="text-6xl lg:text-8xl font-bold" style={{ fontFamily: 'Glacial Indifference' }}>
                 <span>We're a high-end</span> <br /> <span>digital agency</span>
             </h2>
 
             {/* Subtext */}
-            <p ref={subTextRef} className="mt-8 text-lg text-gray-600">
+            <p ref={subTextRef} className="mt-8 text-lg text-gray-600" style={{ fontFamily: 'Glacial Indifference' }}>
                 UX/UI DESIGN / MOTION DESIGN / BRANDING / DEVELOPMENT
             </p>
 
             {/* Button */}
             <div className="mt-8 text-center">
-                <button className="px-8 py-3 bg-black text-white rounded-full text-lg shadow-lg hover:bg-gray-900 transition-all flex items-center justify-center">
+                <button style={{ fontFamily: 'Glacial Indifference' }} className="px-8 py-3 bg-black text-white rounded-full text-lg shadow-lg transition-all flex items-center justify-center hover:bg-[#FF0101] duration-300">
                     Say Hello
-                    <span className="bg-white p-2 ml-2 rounded-full border-opacity-50 text-black">
+                    <span className="bg-white p-2 ml-2 rounded-full border-opacity-50 text-black transition-all duration-300 ease-in-out hover:bg-[#FF0101] hover:text-white">
                         <TiArrowRightThick />
                     </span>
                 </button>
             </div>
+
         </section>
     );
 }

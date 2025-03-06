@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Glacial Indifference';
+    src: url('/glacial-indifference.regular.otf') format('woff'),
+         url('/glacial-indifference.regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Glacial Indifference';
+    src: url('/glacial-indifference.bold.otf') format('woff'),
+         url('/glacial-indifference.bold.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
